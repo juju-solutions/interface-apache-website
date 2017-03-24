@@ -1,0 +1,4 @@
+name: apache-website
+summary: Interface passing website information to Apache2
+version: 1
+maintainer: Cory Johns <cory.johns@canonical.com>
