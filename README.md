@@ -48,7 +48,7 @@ def send_website_info(apache):
             # Other directives here
         </VirtualHost>"""))
     apache.send_site_modules(['mod_php', 'mod_alias'])
-    apache.send_ports([8080])
+    apache.send_ports([80])
     apache.send_enabled()
 ```
 
