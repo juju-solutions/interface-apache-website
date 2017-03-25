@@ -22,19 +22,19 @@ class ApacheWebsiteRequires(RelationBase):
         """
         The fully-qualified domain name of the site.
         """
-        self.send_remote(domain=domain)
+        self.set_remote(domain=domain)
 
     def send_enabled(self, enabled=True):
         """
         Must be set to True when the web site is ready to be used.
         """
-        self.send_remote(enabled=json.dumps(bool(enabled)))
+        self.set_remote(enabled=json.dumps(bool(enabled)))
 
     def send_site_config(self, site_config):
         """
         A vhost configuration block.
         """
-        self.send_remote(site_config=site_config)
+        self.set_remote(site_config=site_config)
 
     def send_site_modules(self, modules):
         """
@@ -42,10 +42,10 @@ class ApacheWebsiteRequires(RelationBase):
         disable_modules, the site will not be enabled. Otherwise, any required
         modules will be loaded.
         """
-        self.send_remote(modules=' '.join(modules))
+        self.set_remote(modules=' '.join(modules))
 
     def send_ports(self, ports):
         """
         A list of ports that the site uses.
         """
-        self.send_remote(ports=' '.join(ports))
+        self.set_remote(ports=' '.join(str(port) for port in ports))
